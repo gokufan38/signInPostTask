@@ -68,7 +68,6 @@ function SignUpForm() {
         {errors.password && <div className="error-message"> {errors.password}</div>}
       </div>
 
-      {/* ... input fields for username and password */}
       <button type="submit">Sign Up</button>
     </form>
   );

@@ -9,5 +9,15 @@
     "mongoose": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "name": "signinposttask",
+  "description": "This task aims to make a product that allows the user do a post request on a webpage with fully implemented sign in features. So a simple sign in page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
