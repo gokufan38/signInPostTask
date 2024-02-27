@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function SignUpForm() {
   const [formData, setFormData] = useState({
@@ -16,18 +17,20 @@ function SignUpForm() {
     setErrors({ ...errors, [event.target.name]: '' }); 
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const newErrors = validateForm();
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      console.log("Submit form data:", formData); 
-      alert("Thank you for signing up!");
-    }
-  }
+        try {
+          const response = await axios.post('http://localhost:3001/signup', formData);
+          console.log(response.data);
+          alert("Thank you for signing up!");
+        } catch (err) {
+          console.error("Signup error:", err);
+        }
+      }
+  
 
   const validateForm = () => {
     const errors = {};
